@@ -1,0 +1,11 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Unit-Circle-Game:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Unit_Circle_Game_jar</output-path>
+    <root id="archive" name="Unit-Circle-Game.jar">
+      <element id="module-output" name="Unit-Circle-Game" />
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
+      </element>
+    </root>
+  </artifact>
+</component>
