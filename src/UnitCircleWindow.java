@@ -10,7 +10,7 @@ import java.util.Random;
 /**
  * Created by Neily on 11/7/15.
  */
-public class UnitCircleWindow extends JFrame {
+public class UnitCircleWindow extends JApplet {
     //TODO: see all other files
     //TODO: document all files
     //TODO: Have a UnitCircle extends JComponent :)
@@ -50,7 +50,6 @@ public class UnitCircleWindow extends JFrame {
     //TODO look around at the classes before starting
     public UnitCircleWindow ()
     {
-        super("Unit Circle Game");
 
         width = 500;
         height = 500;
@@ -106,7 +105,6 @@ public class UnitCircleWindow extends JFrame {
 
         this.setVisible(true);
         this.setSize(width,height);
-        this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
     }
 
@@ -334,11 +332,16 @@ public class UnitCircleWindow extends JFrame {
     }
     //the last on is managed by the main button itself (the main button pressed
 
-    public static void main(String[] args) {
-        javax.swing.SwingUtilities.invokeLater(new Runnable() {
-            public void run() {
-                new UnitCircleWindow();
-            }
-        });
+    @Override
+    public void init() {
+        try {
+            javax.swing.SwingUtilities.invokeLater(new Runnable() {
+                public void run() {
+                    new UnitCircleWindow();
+                }
+            });
+        }catch (Exception e){
+            System.err.println("createGUI didn't complete successfully");
+        }
     }
 }
