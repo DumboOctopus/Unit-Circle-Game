@@ -335,7 +335,7 @@ public class UnitCircleWindow extends JApplet {
     @Override
     public void init() {
         try {
-            javax.swing.SwingUtilities.invokeLater(new Runnable() {
+            SwingUtilities.invokeLater(new Runnable() {
                 public void run() {
                     new UnitCircleWindow();
                 }
