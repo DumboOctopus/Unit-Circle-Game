@@ -6,9 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="61b51b18-b07b-48f8-b98d-5af665185c6d" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test.jar" afterPath="" />
-    </list>
+    <list default="true" id="61b51b18-b07b-48f8-b98d-5af665185c6d" name="Default" comment="" />
     <ignored path="Unit-Circle-Game.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -28,7 +26,7 @@
     <favorites_list name="Unit-Circle-Game" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
