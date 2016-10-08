@@ -3,7 +3,6 @@ import javax.swing.*;
 import javax.swing.WindowConstants;
 
 
-import java.awt.event.*;
 import java.awt.geom.*;
 import java.util.ArrayList;
 import java.util.Random;
@@ -21,7 +20,7 @@ public class UnitCircleWindow extends JFrame {
 //    private int currMode;
 
     private Settings settings;
-    private ArrayList<UnitCircleWindowListener> listeners;//TODO implement this listeners stuff
+    private ArrayList<UnitCircleWindowListener> listeners;
 
     private int width;
     private int height;
@@ -110,89 +109,7 @@ public class UnitCircleWindow extends JFrame {
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
     }
-//    @Deprecated
-//    public void setUpMenuOptions ()
-//    {
-//        //TODO; make its so there a way to
-//        JMenu menu, submenu;
-//
-//        menuBar = new JMenuBar();
-//        menuBar.setPreferredSize(new Dimension(width, 20));
-//
-//        menu = new JMenu("Settings");
-//        menuBar.add(menu);
-//
-//        submenu = new JMenu("Timed Test");
-//
-//        JRadioButtonMenuItem tmp = new JRadioButtonMenuItem("Activate");
-//        tmp.addActionListener(new ActionListener() {
-//            @Override
-//            public void actionPerformed(ActionEvent e) {
-//                if(settings.getTimeGiven() <= 0 || settings.getNumberOfQuestions() <= 0)//if timeGiven or numOfQues has not been initialized
-//                {
-//                    promptSettingsForQuizTime(); //TODO how to clean up this act???
-//                }
-//                mainButton.setText("Start Quiz");
-//                settings.setCurrMode(Settings.QUIZ_TIME);
-//                currAngleLabel.setText("");
-//            }
-//        });
-//        submenu.add(tmp);
-//
-//        //TODO this part
-//        tmp = new JRadioButtonMenuItem("Correct Answer necessary get next question");
-//        tmp.setToolTipText("You are not allowed to move on in the quiz until you answer the question correctly");
-//        tmp.addActionListener(new ActionListener() {
-//            @Override
-//            public void actionPerformed(ActionEvent e)
-//            {
-//                settings.setCorrectToMoveOn(!settings.isCorrectToMoveOn());
-//            }
-//        });
-//        tmp.setSelected(true);
-//        submenu.add(tmp);
-//
-//        JMenuItem menuItem = new JMenuItem("Seconds");
-//        menuItem.addActionListener(new ActionListener() {
-//            @Override
-//            public void actionPerformed(ActionEvent e) {
-//                promptTimeGivenForQuiz();
-//                //TODO have a way to keep track of number of qu ask
-//            }
-//        });
-//        submenu.add(menuItem);
-//
-//        menuItem = new JMenuItem("Number Of Problems");
-//        menuItem.addActionListener(new ActionListener() {
-//            @Override
-//            public void actionPerformed(ActionEvent e) {
-//                promptNumberOfQuestionsForQuiz();
-//                //TODO: so numberOfQuestions is shown in label
-//            }
-//        });
-//        submenu.add(menuItem);
-//
-//        menuItem = new JMenuItem("Picture Of Teacher");
-//        menuItem.addActionListener(new ActionListener() {
-//            @Override
-//            public void actionPerformed(ActionEvent e) {
-//                int returnVal = fc.showOpenDialog(UnitCircleWindow.this);
-//
-//                if (returnVal == JFileChooser.APPROVE_OPTION) {
-//                    settings.setImage(fc.getSelectedFile());
-//
-//                } else {
-//                    //TODO
-//                }
-//            }
-//        });
-//        submenu.add(menuItem);
-//
-//
-//        menuBar.add(submenu);
-//
-//        this.setJMenuBar(menuBar);
-//    }
+
     public void setUpLabels()
     {
         //angle display
@@ -228,62 +145,8 @@ public class UnitCircleWindow extends JFrame {
             }
         }
     }
-//    @Deprecated
-//    public void setUpSkipButton()
-//    {
-//        //next button:
-//        mainButton = new JButton("Skip");
-//        mainButton.addActionListener(new ActionListener() {
-//            @Override
-//            public void actionPerformed(ActionEvent e) {
-//                switch (settings.getCurrMode()) {
-//                    case Settings.FREE_PLAY:
-//                        nextQuestion();
-//                        break;
-//                    case Settings.QUIZ_TIME:
-//                        feedbackLabel.setText("" + settings.getTimeGiven() + " seconds");
-//                        int delay = 1000; //milliseconds
-//
-//                        timerVariable = 0;
-//                        numCorrect = 0;
-//
-//
-//                        Timer t = new Timer(delay, new ActionListener() {
-//                            @Override
-//                            public void actionPerformed(ActionEvent e) {
-//
-//                            }
-//                        });
-//                        t.addActionListener(new ActionListener() {
-//                            public void actionPerformed(ActionEvent evt) {
-//                                timerVariable++;
-//                                feedbackLabel.setText(settings.getTimeGiven() - timerVariable + " seconds");
-//                                if (timerVariable >= settings.getTimeGiven() || settings.getNumberOfQuestions() <= numCorrect + numIncorrect) {
-//
-//                                    feedbackLabel.setText("TIME!");
-//
-//                                    t.stop();
-//
-//                                    new QuizResults (settings.getImage(), numCorrect + " out of " + settings.getNumberOfQuestions());
-//
-//                                }
-//                            }
-//                        });
-//                        nextQuestion();
-//                        t.start();
-//                        break;
-//                }
-//            }
-//        });
-//        mainButton.setBounds(0, 0, 100, 30);
-//
-//        pane.add(mainButton);
-//    }
-
-
 
     //========================setters and getters
-    //TODO: remove this method?
     public void setFeedBackLabel (String x)
     {
         feedbackLabel.setText(x);
@@ -377,6 +240,7 @@ public class UnitCircleWindow extends JFrame {
                 settings.getTimeGiven())
         );
     }
+
 
     public void promptNumberOfQuestionsForQuiz ()
     {

@@ -15,6 +15,7 @@ public class QuizResults extends JDialog {
         setContentPane(contentPane);
         this.image = image;
 
+
         if(image != null) {
             ImageIcon icon = new ImageIcon(image.getAbsolutePath());
             Image tmp = icon.getImage().getScaledInstance(350, 250, Image.SCALE_DEFAULT);

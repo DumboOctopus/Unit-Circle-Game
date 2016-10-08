@@ -90,8 +90,10 @@ public class QuizTimeController implements UnitCircleWindowListener, SettingsLis
                         timer.stop();
                         feedbackLabel.setText("FINISHED!");
                         window.getMainButton().setText("Start Quiz");
-                        new QuizResults (settings.getImage(), numCorrect + " out of " + settings.getNumberOfQuestions());
-
+                        if(numCorrect/settings.getNumberOfQuestions() < 0.80)
+                            new QuizResults (settings.getImage(), numCorrect + " out of " + settings.getNumberOfQuestions());
+                        else
+                            new QuizResults(null, numCorrect + " out of " + settings.getNumberOfQuestions());
                     }
                 }
             });

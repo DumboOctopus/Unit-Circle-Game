@@ -10,8 +10,6 @@ import java.awt.event.ActionListener;
  * correct point on the unit circle.
  */
 public class UnitCirclePointListener implements ActionListener {
-    //TODO call UnitCircleWindow.fireCorrectResponseListeners when the angle is correct
-    //TODO call UnitCircleWindow.fireIncorrectResonseListeners when the angle is incorrect
 
     private UnitCirclePoint point;
     private static UnitCircleWindow window;
